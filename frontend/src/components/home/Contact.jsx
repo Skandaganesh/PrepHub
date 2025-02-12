@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaGoogle, FaGithub, FaLinkedin } from "react-icons/fa";
-import Navbar from "./Navbar";
+
 import Footer from "./Footer";
 import BackgroundAnimation from "../../BackgroundAnimation";
 
@@ -19,7 +19,7 @@ const ContactUs = () => {
 
   return (
     <>
-     <Navbar/>
+     
     <div className="min-h-screen flex flex-col items-center justify-center bg-black p-6">
        
         <BackgroundAnimation/>
