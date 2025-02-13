@@ -1,6 +1,6 @@
-import React from "react";
+
 import BackgroundAnimation from "../../BackgroundAnimation";
-import Navbar from "./Navbar";
+
 import Footer from "./Footer";
 
 
@@ -33,10 +33,8 @@ const exploreItems = [
 
 const Explore = () => {
   return (
-    <>
-     <Navbar/>
-    <div className="min-h-screen bg-gray-800 text-white p-10">
-       
+    <div className="min-h-screen bg-gray-900 text-white p-10">
+        
         <BackgroundAnimation/>
       <h1 className="text-4xl font-bold text-center mb-8">Explore</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

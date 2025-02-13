@@ -6,21 +6,22 @@ const BackgroundAnimation = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const navbarHeight = document.querySelector("nav")?.offsetHeight || 0;
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight - navbarHeight*0.25;
+      init();
+    };
 
     let particlesArray = [];
     const numberOfParticles = 100;
-
-    const mouse = {
-      x: null,
-      y: null,
-      radius: 100
-    };
+    
+    const mouse = { x: null, y: null, radius: 100 };
 
     window.addEventListener("mousemove", (event) => {
       mouse.x = event.x;
-      mouse.y = event.y;
+      mouse.y = event.y - navbarHeight;
     });
 
     class Particle {
@@ -44,25 +45,16 @@ const BackgroundAnimation = () => {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
-        let forceDirectionX = dx / distance;
-        let forceDirectionY = dy / distance;
-        let maxDistance = mouse.radius;
-        let force = (maxDistance - distance) / maxDistance;
-        let directionX = forceDirectionX * force * 5;
-        let directionY = forceDirectionY * force * 5;
+        let force = (mouse.radius - distance) / mouse.radius;
+        let directionX = (dx / distance) * force * 5;
+        let directionY = (dy / distance) * force * 5;
 
         if (distance < mouse.radius) {
           this.x -= directionX;
           this.y -= directionY;
         } else {
-          if (this.x !== this.baseX) {
-            let dx = this.x - this.baseX;
-            this.x -= dx / 10;
-          }
-          if (this.y !== this.baseY) {
-            let dy = this.y - this.baseY;
-            this.y -= dy / 10;
-          }
+          if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / 10;
+          if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / 10;
         }
       }
     }
@@ -72,9 +64,7 @@ const BackgroundAnimation = () => {
       for (let i = 0; i < numberOfParticles; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        let size = Math.random() * 3 + 1;
-        let color = "white";
-        particlesArray.push(new Particle(x, y, size, color));
+        particlesArray.push(new Particle(x, y, Math.random() * 3 + 1, "white"));
       }
     }
 
@@ -87,20 +77,19 @@ const BackgroundAnimation = () => {
       requestAnimationFrame(animate);
     }
 
-    init();
+    resizeCanvas();
     animate();
 
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      init();
-    });
+    window.addEventListener("resize", resizeCanvas);
+
+    return () => window.removeEventListener("resize", resizeCanvas);
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
+      className="fixed top-[var(--navbar-height)] left-0 w-full pointer-events-none z-0"
+      style={{ top: "var(--navbar-height)" }}
     ></canvas>
   );
 };
