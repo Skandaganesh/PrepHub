@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="bg-gray-900 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div  onClick={() => navigate("/")} className="text-2xl font-bold cursor-pointer" >
+        <div  href="http://localhost:5173/" className="text-2xl font-bold cursor-pointer" >
       PrepHub
     </div>
 
