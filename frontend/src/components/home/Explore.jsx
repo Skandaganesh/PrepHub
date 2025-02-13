@@ -33,6 +33,7 @@ const exploreItems = [
 
 const Explore = () => {
   return (
+    <>
     <div className="min-h-screen bg-gray-900 text-white p-10">
         
         <BackgroundAnimation/>
