@@ -11,9 +11,12 @@ const HomePage = () => {
     <div
       className="relative min-h-screen text-white"
       style={{
-        backgroundImage: `url(${Hbg})`,
-        backgroundSize: "150%", // Zoom out effect
-        backgroundPosition: "center",
+        backgroundImage:
+          'url("https://img.pikbest.com/backgrounds/20220119/blue-purple-gradient-fluid-abstract-minimalistic-background_6241863.jpg!bw700")',
+        backgroundSize: "cover", // Ensures full coverage
+        backgroundRepeat: "no-repeat", // Prevents repetition
+        backgroundAttachment: "fixed", // Fixes the image in place
+        backgroundPosition: "center center", // Centers the image
       }}
     >
       <BackgroundAnimation />

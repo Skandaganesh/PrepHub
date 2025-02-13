@@ -6,6 +6,7 @@ import HomePage from './components/home/Home';
 import ContactUs from './components/home/Contact';
 import Explore from './components/home/Explore';
 import DailyTest from './components/home/DailyTest';
+import Roadmap from './components/roadmappages/Roadmap';
 function App() {
  
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/contact" element={<ContactUs/>}/>
         <Route path="/explore" element={<Explore/>}/>
         <Route path="/test" element={<DailyTest />} />
+        <Route path="/roadmaps" element={<Roadmap />} />
       </Routes>
       </BrowserRouter>
       
