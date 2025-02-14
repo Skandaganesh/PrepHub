@@ -17,18 +17,27 @@ function App() {
     const prefetchTestLink = async () => {
       const cachedData = JSON.parse(localStorage.getItem("dailyTestCache"));
       const today = new Date().toISOString().split("T")[0];
-
-      if (cachedData && cachedData.date === today) return; // Skip if cached
-
+    
+      if (cachedData && cachedData.date === today && cachedData.link) return; // Skip if cached
+    
       try {
         const { data } = await axios.get(import.meta.env.VITE_SITE_URL);
-        if (data.link) {
-          localStorage.setItem("dailyTestCache", JSON.stringify({ link: data.link, date: today }));
+        console.log("Pre-fetch API Response:", data); // Debugging
+    
+        if (data?.link) {
+          localStorage.setItem(
+            "dailyTestCache",
+            JSON.stringify({ link: data.link, date: today })
+          );
+          console.log("Prefetched and saved test link:", data.link);
+        } else {
+          console.warn("Pre-fetch failed: No valid link in response.");
         }
       } catch (error) {
         console.error("Error pre-fetching test link:", error);
       }
     };
+    
 
     prefetchTestLink();
   }, []);
