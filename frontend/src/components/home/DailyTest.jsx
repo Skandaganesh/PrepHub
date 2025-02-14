@@ -10,7 +10,7 @@ const DailyTest = () => {
 
   const fetchTestLink = useCallback(async () => {
     setFetching(true);
-    const cachedData = JSON.parse(sessionStorage.getItem("dailyTestCache"));
+    const cachedData = JSON.parse(localStorage.getItem("dailyTestCache"));
     const today = new Date().toISOString().split("T")[0];
 
     if (cachedData && cachedData.date === today) {
@@ -25,7 +25,7 @@ const DailyTest = () => {
       const { data } = await axios.get(`${SITE_URL}`);
 
       if (data.link) {
-        sessionStorage.setItem("dailyTestCache", JSON.stringify({ link: data.link, date: today }));
+        localStorage.setItem("dailyTestCache", JSON.stringify({ link: data.link, date: today }));
         setTestUrl(data.link);
         console.log("Fetched test link:", data.link);
       }
