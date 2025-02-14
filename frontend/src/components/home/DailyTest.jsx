@@ -120,7 +120,7 @@ const DailyTest = () => {
           <div className="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
           <p className="mt-4 text-white">Please wait...</p>
         </div>
-      ) : testUrl.includes("leetcode.com") ? (
+      ) : testUrl && testUrl.includes("leetcode.com")? (
         <div className="flex flex-col items-center">
           <button
             onClick={() => (window.location.href = testUrl)}
