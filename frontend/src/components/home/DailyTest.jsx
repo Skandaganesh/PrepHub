@@ -19,9 +19,9 @@ const DailyTest = () => {
       setFetching(false);
       return;
     }
-
+    const SITE_URL = import.meta.env.VITE_SITE_URL;
     try {
-      const { data } = await axios.get("https://script.google.com/macros/s/AKfycbwctfr8AHf1uYqystS8YpS9FFpdpe2bfxl6X3TjcZnAWC3fwmNVLLZj_AeHFDOqd6nBGA/exec");
+      const { data } = await axios.get(`${SITE_URL}`);
       if (data.link) {
         localStorage.setItem("dailyTestCache", JSON.stringify({ link: data.link, date: today }));
         setTestUrl(data.link);
