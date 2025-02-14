@@ -42,8 +42,8 @@ function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/test" element={<DailyTest />} />
         <Route path="/roadmaps" element={<Roadmap />} />
-        <Route path="/roadmaps/aptitopics" element={<AptitudeTopics />} />
-        <Route path="/topics/number-system" element={<Numbers/>} />
+        <Route path="/aptitopics" element={<AptitudeTopics />} />
+        <Route path="/number-system" element={<Numbers/>} />
       </Routes>
     </BrowserRouter>
   );

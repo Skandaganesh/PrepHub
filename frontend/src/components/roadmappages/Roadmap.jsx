@@ -4,11 +4,31 @@ import Footer from "../home/Footer";
 import { useNavigate } from "react-router-dom";
 
 const topics = [
-  { title: "Quantitative Aptitude", description: "Master numerical and mathematical problem-solving skills.", link: "/roadmaps/aptitopics" },
-  { title: "Competitive Programming", description: "Enhance problem-solving speed using DSA and algorithms.", link: "/roadmaps/cp" },
-  { title: "Logical Reasoning", description: "Sharpen your logical thinking and analytical skills.", link: "/roadmaps/logical-reasoning" },
-  { title: "Data Interpretation", description: "Develop skills to analyze and interpret data efficiently.", link: "/roadmaps/data-interpretation" },
-  { title: "Verbal Reasoning", description: "Improve comprehension and verbal problem-solving abilities.", link: "/roadmaps/verbal-reasoning" },
+  {
+    title: "Quantitative Aptitude",
+    description: "Master numerical and mathematical problem-solving skills.",
+    link: "/aptitopics",
+  },
+  {
+    title: "Competitive Programming",
+    description: "Enhance problem-solving speed using DSA and algorithms.",
+    link: "/cp",
+  },
+  {
+    title: "Logical Reasoning",
+    description: "Sharpen your logical thinking and analytical skills.",
+    link: "/logical-reasoning",
+  },
+  {
+    title: "Data Interpretation",
+    description: "Develop skills to analyze and interpret data efficiently.",
+    link: "/data-interpretation",
+  },
+  {
+    title: "Verbal Reasoning",
+    description: "Improve comprehension and verbal problem-solving abilities.",
+    link: "/verbal-reasoning",
+  },
 ];
 
 const Roadmap = () => {
@@ -19,7 +39,7 @@ const Roadmap = () => {
       <div className="min-h-screen bg-gray-800 text-white py-10 px-5 md:px-20">
         <BackgroundAnimation />
         <h1 className="text-4xl font-bold text-center mb-10">Roadmaps</h1>
-        
+
         {/* Topics Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {topics.map((topic, index) => (

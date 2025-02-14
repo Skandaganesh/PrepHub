@@ -31,11 +31,15 @@ export default function AptitudeTopics() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl">
         {topics.map((topic, index) => (
           <Link
-            to={`/topics/${topic.toLowerCase().replace(/\s+/g, "-")}`}
+            to={`/${topic.toLowerCase().replace(/\s+/g, "-")}`}
             key={index}
             className="bg-gray-800 p-3 rounded-lg flex items-center cursor-pointer hover:bg-gray-700 transition"
           >
-            {open[index] ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+            {open[index] ? (
+              <ChevronDown size={20} />
+            ) : (
+              <ChevronRight size={20} />
+            )}
             <Folder size={20} className="ml-2 text-yellow-400" />
             <span className="ml-3">{topic}</span>
           </Link>
