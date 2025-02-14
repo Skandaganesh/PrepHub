@@ -27,7 +27,7 @@ function App() {
         if (data?.link) {
           localStorage.setItem(
             "dailyTestCache",
-            JSON.stringify({ link: data.link, date: today })
+            JSON.stringify({ link: String(data.link), date: today })
           );
           console.log("Prefetched and saved test link:", data.link);
         } else {
