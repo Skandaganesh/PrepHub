@@ -1,12 +1,12 @@
 import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
-import html2canvas from "html2canvas";
+// import html2canvas from "html2canvas";
 
 const DailyTest = () => {
   const [testUrl, setTestUrl] = useState("");
-  const [marks, setMarks] = useState(null);
+  const [marks] = useState(null);
   const [fetching, setFetching] = useState(true);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   const fetchTestLink = useCallback(async () => {
     setFetching(true);
@@ -38,76 +38,76 @@ const DailyTest = () => {
   useEffect(() => {
     fetchTestLink();
   }, [fetchTestLink]);
-  const captureFullPageCanvas = async () => {
-    try {
-      setLoading(true);
+  // const captureFullPageCanvas = async () => {
+  //   try {
+  //     setLoading(true);
   
-      const canvas = document.createElement("canvas");
-      const context = canvas.getContext("2d");
+  //     const canvas = document.createElement("canvas");
+  //     const context = canvas.getContext("2d");
   
-      const pageHeight = document.documentElement.scrollHeight;
-      const viewportHeight = window.innerHeight;
-      const scrollIncrement = viewportHeight;
-      let yOffset = 0;
+  //     const pageHeight = document.documentElement.scrollHeight;
+  //     const viewportHeight = window.innerHeight;
+  //     const scrollIncrement = viewportHeight;
+  //     let yOffset = 0;
   
-      canvas.width = window.innerWidth;
-      canvas.height = pageHeight;
+  //     canvas.width = window.innerWidth;
+  //     canvas.height = pageHeight;
   
-      while (yOffset < pageHeight) {
-        window.scrollTo(0, yOffset);
-        await new Promise((resolve) => setTimeout(resolve, 300)); // Allow time for rendering
+  //     while (yOffset < pageHeight) {
+  //       window.scrollTo(0, yOffset);
+  //       await new Promise((resolve) => setTimeout(resolve, 300)); // Allow time for rendering
   
-        const snapshotCanvas = document.createElement("canvas");
-        snapshotCanvas.width = window.innerWidth;
-        snapshotCanvas.height = viewportHeight;
-        const snapshotContext = snapshotCanvas.getContext("2d");
+  //       const snapshotCanvas = document.createElement("canvas");
+  //       snapshotCanvas.width = window.innerWidth;
+  //       snapshotCanvas.height = viewportHeight;
+  //       const snapshotContext = snapshotCanvas.getContext("2d");
   
-        const video = document.createElement("video");
-        const stream = await navigator.mediaDevices.getDisplayMedia({ video: true });
-        video.srcObject = stream;
+  //       const video = document.createElement("video");
+  //       const stream = await navigator.mediaDevices.getDisplayMedia({ video: true });
+  //       video.srcObject = stream;
   
-        await new Promise((resolve) => (video.onloadedmetadata = resolve));
+  //       await new Promise((resolve) => (video.onloadedmetadata = resolve));
   
-        snapshotContext.drawImage(video, 0, -yOffset, window.innerWidth, pageHeight);
-        context.drawImage(snapshotCanvas, 0, yOffset);
+  //       snapshotContext.drawImage(video, 0, -yOffset, window.innerWidth, pageHeight);
+  //       context.drawImage(snapshotCanvas, 0, yOffset);
   
-        yOffset += scrollIncrement;
+  //       yOffset += scrollIncrement;
   
-        stream.getTracks().forEach((track) => track.stop()); // Stop screen capture
-      }
+  //       stream.getTracks().forEach((track) => track.stop()); // Stop screen capture
+  //     }
   
-      const finalImage = canvas.toDataURL("image/png");
-      console.log("Full Page Screenshot Captured");
+  //     const finalImage = canvas.toDataURL("image/png");
+  //     console.log("Full Page Screenshot Captured");
   
-      return finalImage;
-    } catch (error) {
-      console.error("Error capturing full-page screenshot:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     return finalImage;
+  //   } catch (error) {
+  //     console.error("Error capturing full-page screenshot:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
   
   
-  const captureScreenshotAndFetchMarks = async () => {
-    try {
-      setLoading(true);
-      const canvas = await html2canvas(document.body);
-      const imageBase64 = canvas.toDataURL("image/png");
+  // const captureScreenshotAndFetchMarks = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const canvas = await html2canvas(document.body);
+  //     const imageBase64 = canvas.toDataURL("image/png");
 
-      const { data } = await axios.post("http://localhost:5000/upload-image", {
-        image: imageBase64,
-      });
+  //     const { data } = await axios.post("http://localhost:5000/upload-image", {
+  //       image: imageBase64,
+  //     });
 
-      if (data.extractedMarks !== "Not Found") {
-        console.log("Extracted Marks:", data.extractedMarks);
-        setMarks(data.extractedMarks);
-      }
-    } catch (error) {
-      console.error("Error capturing marks:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     if (data.extractedMarks !== "Not Found") {
+  //       console.log("Extracted Marks:", data.extractedMarks);
+  //       setMarks(data.extractedMarks);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error capturing marks:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
