@@ -21,7 +21,7 @@ function App() {
       if (cachedData && cachedData.date === today) return; // Skip if cached
 
       try {
-        const { data } = await axios.get("https://script.google.com/macros/s/AKfycbwctfr8AHf1uYqystS8YpS9FFpdpe2bfxl6X3TjcZnAWC3fwmNVLLZj_AeHFDOqd6nBGA/exec");
+        const { data } = await axios.get(import.meta.env.VITE_SITE_URL);
         if (data.link) {
           localStorage.setItem("dailyTestCache", JSON.stringify({ link: data.link, date: today }));
         }
