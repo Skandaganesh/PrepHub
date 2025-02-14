@@ -8,6 +8,8 @@ import ContactUs from './components/home/Contact';
 import Explore from './components/home/Explore';
 import DailyTest from './components/home/DailyTest';
 import Roadmap from './components/roadmappages/Roadmap';
+import AptitudeTopics from './components/roadmappages/aptitude/AptitudeTopics';
+import Numbers from './components/roadmappages/aptitude/Number';
 
 function App() {
   useEffect(() => {
@@ -40,6 +42,8 @@ function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/test" element={<DailyTest />} />
         <Route path="/roadmaps" element={<Roadmap />} />
+        <Route path="/roadmaps/aptitopics" element={<AptitudeTopics />} />
+        <Route path="/topics/number-system" element={<Numbers/>} />
       </Routes>
     </BrowserRouter>
   );
