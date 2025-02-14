@@ -7,34 +7,43 @@ const DailyTest = () => {
   const [marks] = useState(null);
   const [fetching, setFetching] = useState(true);
   const [loading] = useState(false);
-
+  const isValidURL = (url) => {
+    try {
+      return Boolean(new URL(url));
+    } catch (e) {
+      return false;
+    }
+  };
   const fetchTestLink = useCallback(async () => {
     setFetching(true);
     const cachedData = JSON.parse(localStorage.getItem("dailyTestCache"));
     const today = new Date().toISOString().split("T")[0];
+ 
 
-    if (cachedData && cachedData.date === today) {
+    if (cachedData && cachedData.date === today && isValidURL(cachedData.link)) {
       console.log("Loaded cached test link:", cachedData.link);
       setTestUrl(cachedData.link);
       setFetching(false);
       return;
     }
-
+  
     try {
       const SITE_URL = import.meta.env.VITE_SITE_URL;
       const { data } = await axios.get(`${SITE_URL}`);
-
-      if (data.link) {
+  
+      if (isValidURL(data?.link)) {
         localStorage.setItem("dailyTestCache", JSON.stringify({ link: data.link, date: today }));
         setTestUrl(data.link);
         console.log("Fetched test link:", data.link);
+      } else {
+        console.warn("Invalid link format received:", data?.link);
       }
     } catch (error) {
       console.error("Error fetching test link:", error);
     }
     setFetching(false);
   }, []);
-
+  
   useEffect(() => {
     fetchTestLink();
   }, [fetchTestLink]);

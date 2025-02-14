@@ -12,35 +12,44 @@ import AptitudeTopics from './components/roadmappages/aptitude/AptitudeTopics';
 import Numbers from './components/roadmappages/aptitude/Number';
 
 function App() {
+  const isValidURL = (url) => {
+      try {
+        return Boolean(new URL(url));
+      } catch (e) {
+        return false;
+      }
+    };
   useEffect(() => {
+    
+    
     window.scrollTo(top, 0);
     const prefetchTestLink = async () => {
       const cachedData = JSON.parse(localStorage.getItem("dailyTestCache"));
       const today = new Date().toISOString().split("T")[0];
-    
-      if (cachedData && cachedData.date === today && cachedData.link) return; // Skip if cached
-    
+  
+      if (cachedData && cachedData.date === today && isValidURL(cachedData.link)) return;
+  
       try {
         const { data } = await axios.get(import.meta.env.VITE_SITE_URL);
-        console.log("Pre-fetch API Response:", data); // Debugging
-    
-        if (data?.link) {
+        console.log("Pre-fetch API Response:", data); 
+  
+        if (isValidURL(data?.link)) {
           localStorage.setItem(
             "dailyTestCache",
-            JSON.stringify({ link: String(data.link), date: today })
+            JSON.stringify({ link: data.link, date: today })
           );
           console.log("Prefetched and saved test link:", data.link);
         } else {
-          console.warn("Pre-fetch failed: No valid link in response.");
+          console.warn("Invalid link received:", data?.link);
         }
       } catch (error) {
         console.error("Error pre-fetching test link:", error);
       }
     };
-    
-
+  
     prefetchTestLink();
   }, []);
+  
 
   return (
     <BrowserRouter>
