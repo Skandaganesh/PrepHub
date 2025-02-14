@@ -18,8 +18,7 @@ const DailyTest = () => {
     setFetching(true);
     const cachedData = JSON.parse(localStorage.getItem("dailyTestCache"));
     const today = new Date().toISOString().split("T")[0];
- 
-
+  
     if (cachedData && cachedData.date === today && isValidURL(cachedData.link)) {
       console.log("Loaded cached test link:", cachedData.link);
       setTestUrl(cachedData.link);
@@ -31,7 +30,7 @@ const DailyTest = () => {
       const SITE_URL = import.meta.env.VITE_SITE_URL;
       const { data } = await axios.get(`${SITE_URL}`);
   
-      if (isValidURL(data?.link)) {
+      if (data && typeof data === "object" && typeof data.link === "string" && isValidURL(data.link)) {
         localStorage.setItem("dailyTestCache", JSON.stringify({ link: data.link, date: today }));
         setTestUrl(data.link);
         console.log("Fetched test link:", data.link);
@@ -43,6 +42,7 @@ const DailyTest = () => {
     }
     setFetching(false);
   }, []);
+  
   
   useEffect(() => {
     fetchTestLink();
