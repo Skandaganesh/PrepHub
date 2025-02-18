@@ -13,6 +13,16 @@ const LoginPage = () => {
           {isSignUp ? "Create an Account" : "Login to PrepHub"}
         </h2>
         <form>
+          {isSignUp && (
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-1">Name</label>
+              <input
+                type="text"
+                className="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-gradient-to-r from-cyan-300 to-blue-700"
+                required
+              />
+            </div>
+          )}
           <div className="mb-4">
             <label className="block text-sm font-medium mb-1">Email</label>
             <input
@@ -21,6 +31,16 @@ const LoginPage = () => {
               required
             />
           </div>
+          {isSignUp && (
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-1">Year</label>
+              <input
+                type="text"
+                className="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-gradient-to-r from-cyan-300 to-blue-700"
+                required
+              />
+            </div>
+          )}
           <div className="mb-4">
             <label className="block text-sm font-medium mb-1">Password</label>
             <input
