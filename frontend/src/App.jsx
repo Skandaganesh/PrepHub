@@ -10,6 +10,7 @@ import DailyTest from './components/home/DailyTest';
 import Roadmap from './components/roadmappages/Roadmap';
 import AptitudeTopics from './components/roadmappages/aptitude/AptitudeTopics';
 import Numbers from './components/roadmappages/aptitude/Number';
+import ComputerFundamentalTopics from './components/roadmappages/computerfundamentals/FundamentalTopics';
 
 function App() {
   const isValidURL = (url) => {
@@ -60,6 +61,7 @@ function App() {
         <Route path="/roadmaps" element={<Roadmap />} />
         <Route path="/aptitopics" element={<AptitudeTopics />} />
         <Route path="/number-system" element={<Numbers/>} />
+        <Route path="/computer-fundamentals" element={<ComputerFundamentalTopics/>} />
       </Routes>
     </BrowserRouter>
   );

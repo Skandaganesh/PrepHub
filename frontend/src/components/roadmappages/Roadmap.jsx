@@ -29,6 +29,11 @@ const topics = [
     description: "Improve comprehension and verbal problem-solving abilities.",
     link: "/verbal-reasoning",
   },
+  {
+    title: "Computer Fundamentals",
+    description: "Improve the basics of computer science.",
+    link: "/computer-fundamentals",
+  },
 ];
 
 const Roadmap = () => {
