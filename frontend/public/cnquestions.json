@@ -1,0 +1,198 @@
+{
+    "basic": [
+        {
+            "question": "What is meant by a link and node?",
+            "answer": " A network includes two or more computers connected directly by a physical medium like coaxial cable or optical fiber. Link is the physical medium of connection in this setup, and nodes are the computers connected."
+        },
+        {
+            "question": "Define IP address.",
+            "answer": "In a network system, an IP address is a unique software address of a computer. It is 32 bit."
+        },
+        {
+            "question": "What do you understand by DNS?",
+            "answer": "There are two types of server/client programs. One is directly used by the user and the other support application programs. Domain Name system belongs to the second type as it is used by other programs, for example, to find the IP address of an e-mail recipient."
+        },
+        {
+            "question": "What is a peer-to-peer process?",
+            "answer": "A peer-to-peer process refers to all processes on a machine that communicates at a given layer."
+        },
+        {
+            "question": "Define network topology.",
+            "answer": "Network topology refers to the network's physical structure that defines how nodes or computers will be connected."
+        },
+        {
+            "question": "What is a firewall?",
+            "answer": "A firewall is a security system concept that helps in protecting computers from any cyber-attack or unauthorized access."
+        },
+        {
+            "question": "Tell us the maximum segment length of the 100Base-FX network.",
+            "answer": "The maximum length of a 100Base-FX network is 412 meters."
+        },
+        {
+            "question": "What is the role of the network layer in the OSI reference model?",
+            "answer": "The network layer is responsible for packet switching, control of network congestion, and data routing. This layer has routers operating under it."
+        },
+        {
+            "question": "Explain OSI and its role in computer networks.",
+            "answer": "OSI or Open Systems Interconnect is a reference model for data communication. It has seven layers, each defining a particular aspect of how network devices communicate and connect. One layer dictates how data is transmitted, while the other deals with physical media used."
+        },
+        {
+            "question": "Give the disadvantage of the peer-peer network.",
+            "answer": "As the resources to be accessed are shared by one of the workstations on the network, there is a performance hit."
+        },
+        {
+            "question": "Define ping.",
+            "answer": "Ping is a utility program that allows us to check connectivity on the network between network devices. A device can be pinged by using its device name(like computer name) or IP address."
+        },
+        {
+            "question": "What is meant by clustering support?",
+            "answer": "Clustering support is the ability of a network operating system in a fault-tolerant group to connect multiple servers. The primary purpose of clustering is that if one server fails, the processing can continue with the next server in the cluster."
+        },
+        {
+            "question": "How does dynamic host configuration protocol help in network administration?",
+            "answer": "The network administrator applies the dynamic host configuration protocol to create a pool of IP addresses instead of visiting each client computer to configure a static IP address. This pool is known as the scope that can be assigned to clients dynamically."
+        },
+        {
+            "question": "What do you understand by decoder?",
+            "answer": "The decoder is a type of circuit that converts the digital signal into an analog signal and encoded data into its original format."
+        },
+        {
+            "question": "Can you tell us about the use of Pseudo TTY?",
+            "answer": "It is a false terminal allowing external machines to log in or to connect through Telnet. No connection can take place without it."
+        },
+        {
+            "question": "Tell us about the advantages of a Modem.",
+            "answer": "Some advantages of modem are: Its speed depends on the cost It is more helpful in connecting LAN with the Internet It is the most widely used data communication roadway."
+        },
+        {
+            "question": "Explain Proxy Server and its function.",
+            "answer": "IP addresses are required for data transmission and are even used by DNS to route to the correct website. Without knowledge of the actual and correct IP address, it is not possible to identify the network's physical location. Proxy servers prevent unauthorized access of IP addresses and make the computer network virtually invisible to external users."
+        },
+        {
+            "question": "What are the characteristics of networking?",
+            "answer": "The characteristics of networking are: Medium- the channel used by computers for communication Topology- the way computers are arranged in the network physically or logically Protocols- deals with how computers communicate with one another."
+        },
+        {
+            "question": "What do you understand by beaconing?",
+            "answer": "When a network self-repair its issues, then it is known as beaconing. It is mainly used in Fiber Distributed Data Interface (FDDI) and token ring networks. If a device in the network faces any problem, then the devices that are not receiving any signal are notified. This way, the problem gets repaired within the network."
+        },
+        {
+            "question": "What is SLIP?",
+            "answer": "SLIP refers to Serial Line Interface Protocol. It is used for transmitting IP datagrams over a serial line."
+        },
+        {
+            "question": "What is an IPv4 address? What are the different classes of IPv4?",
+            "answer": "An IP address is a 32-bit dynamic address of a node in the network. An IPv4 address has 4 octets of 8-bit each with each number with a value up to 255. IPv4 classes are differentiated based on the number of hosts it supports on the network. There are five types of IPv4 classes and are based on the first octet of IP addresses which are classified as Class A, B, C, D, or E. IPv4 Class\tIPv4 Start Address\tIPv4 End Address\tUsage A\t0.0.0.0\t127.255.255.255\tUsed for Large Network B\t128.0.0.0\t191.255.255.255\tUsed for Medium Size Network C\t192.0.0.0\t223.255.255.255\tUsed for Local Area Network D\t224.0.0.0\t239.255.255.255\tReserved for Multicasting E\t240.0.0.0\t255.255.255.254\tStudy and R&D"
+        },
+        {
+            "question": "Explain different types of networks.",
+            "answer": "Below are few types of networks: Type\tDescription PAN (Personal Area Network)\tLet devices connect and communicate over the range of a person. E.g. connecting Bluetooth devices. LAN (Local Area Network)\tIt is a privately owned network that operates within and nearby a single building like a home, office, or factory MAN (Metropolitan Area Network)\tIt connects and covers the whole city. E.g. TV Cable connection over the city WAN (Wide Area Network)\tIt spans a large geographical area, often a country or continent. The Internet is the largest WAN GAN (Global Area Network)\tIt is also known as the Internet which connects the globe using satellites. The Internet is also called the Network of WANs."
+        },
+        {
+            "question": "Explain LAN (Local Area Network)",
+            "answer": "LANs are widely used to connect computers/laptops and consumer electronics which enables them to share resources (e.g., printers, fax machines) and exchange information. When LANs are used by companies or organizations, they are called enterprise networks. There are two different types of LAN networks i.e. wireless LAN (no wires involved achieved using Wi-Fi) and wired LAN (achieved using LAN cable). Wireless LANs are very popular these days for places where installing wire is difficult. The below diagrams explain both wireless and wired LAN."
+        },
+        {
+            "question": "Tell me something about VPN (Virtual Private Network)",
+            "answer": "VPN or the Virtual Private Network is a private WAN (Wide Area Network) built on the internet. It allows the creation of a secured tunnel (protected network) between different networks using the internet (public network). By using the VPN, a client can connect to the organization\u2019s network remotely. The below diagram shows an organizational WAN network over Australia created using VPN: VPN (Virtual Private Network)"
+        },
+        {
+            "question": "What are the advantages of using a VPN?",
+            "answer": "Below are few advantages of using VPN: VPN is used to connect offices in different geographical locations remotely and is cheaper when compared to WAN connections. VPN is used for secure transactions and confidential data transfer between multiple offices located in different geographical locations. VPN keeps an organization\u2019s information secured against any potential threats or intrusions by using virtualization. VPN encrypts the internet traffic and disguises the online identity."
+        },
+        {
+            "question": "What are the different types of VPN?",
+            "answer": "Few types of VPN are: Access VPN: Access VPN is used to provide connectivity to remote mobile users and telecommuters. It serves as an alternative to dial-up connections or ISDN (Integrated Services Digital Network) connections. It is a low-cost solution and provides a wide range of connectivity. Site-to-Site VPN: A Site-to-Site or Router-to-Router VPN is commonly used in large companies having branches in different locations to connect the network of one office to another in different locations. There are 2 sub-categories as mentioned below: Intranet VPN: Intranet VPN is useful for connecting remote offices in different geographical locations using shared infrastructure (internet connectivity and servers) with the same accessibility policies as a private WAN (wide area network). Extranet VPN: Extranet VPN uses shared infrastructure over an intranet, suppliers, customers, partners, and other entities and connects them using dedicated connections."
+        },
+        {
+            "question": "What are nodes and links?",
+            "answer": "Node: Any communicating device in a network is called a Node. Node is the point of intersection in a network. It can send/receive data and information within a network. Examples of the node can be computers, laptops, printers, servers, modems, etc. Link: A link or edge refers to the connectivity between two nodes in the network. It includes the type of connectivity (wired or wireless) between the nodes and protocols used for one node to be able to communicate with the other."
+        },
+        {
+            "question": "What is the network topology?",
+            "answer": "Network topology is a physical layout of the network, connecting the different nodes using the links. It depicts the connectivity between the computers, devices, cables, etc."
+        },
+        {
+            "question": "Define different types of network topology",
+            "answer": "The different types of network topology are given below: Bus Topology: Bus Topology All the nodes are connected using the central link known as the bus. It is useful to connect a smaller number of devices. If the main cable gets damaged, it will damage the whole network. Star Topology: Star Topology All the nodes are connected to one single node known as the central node. It is more robust. If the central node fails the complete network is damaged. Easy to troubleshoot. Mainly used in home and office networks. Ring Topology: Ring Topology Each node is connected to exactly two nodes forming a ring structure If one of the nodes are damaged, it will damage the whole network It is used very rarely as it is expensive and hard to install and manage Mesh Topology: Mesh Topology Each node is connected to one or many nodes. It is robust as failure in one link only disconnects that node. It is rarely used and installation and management are difficult. Tree Topology: Tree Topology A combination of star and bus topology also know as an extended bus topology. All the smaller star networks are connected to a single bus. If the main bus fails, the whole network is damaged. Hybrid: It is a combination of different topologies to form a new topology. It helps to ignore the drawback of a particular topology and helps to pick the strengths from other."
+        },
+        {
+            "question": "How are Network types classified?",
+            "answer": "Network types can be classified and divided based on the area of distribution of the network. The below diagram would help to understand the same: Network Types"
+        },
+        {
+            "question": "What are Private and Special IP addresses?",
+            "answer": "Private Address: For each class, there are specific IPs that are reserved specifically for private use only. This IP address cannot be used for devices on the Internet as they are non-routable. IPv4 Class\tPrivate IPv4 Start Address\tPrivate IPv4 End Address A\t10.0.0.0\t10.255.255.255 B\t172.16.0.0\t172.31.255.255 C\t192.168.0.0\t192.168.255.255 Special Address: IP Range from 127.0.0.1 to 127.255.255.255 are network testing addresses also known as loopback addresses are the special IP address."
+        }
+    ],
+    "intermediate": [
+        {
+            "question": "What is the DNS?",
+            "answer": "DNS is the Domain Name System. It is considered as the devices/services directory of the Internet. It is a decentralized and hierarchical naming system for devices/services connected to the Internet. It translates the domain names to their corresponding IPs. For e.g. interviewbit.com to 172.217.166.36. It uses port 53 by default."
+        },
+        {
+            "question": "What is the use of a router and how is it different from a gateway?",
+            "answer": "The router is a networking device used for connecting two or more network segments. It directs the traffic in the network. It transfers information and data like web pages, emails, images, videos, etc. from source to destination in the form of packets. It operates at the network layer. The gateways are also used to route and regulate the network traffic but, they can also send data between two dissimilar networks while a router can only send data to similar networks."
+        },
+        {
+            "question": "What is the SMTP protocol?",
+            "answer": "SMTP is the Simple Mail Transfer Protocol. SMTP sets the rule for communication between servers. This set of rules helps the software to transmit emails over the internet. It supports both End-to-End and Store-and-Forward methods. It is in always-listening mode on port 25. SMTP Protocol"
+        },
+        {
+            "question": "Describe the OSI Reference Model",
+            "answer": "Open System Interconnections (OSI) is a network architecture model based on the ISO standards. It is called the OSI model as it deals with connecting the systems that are open for communication with other systems. The OSI model has seven layers. The principles used to arrive at the seven layers can be summarized  briefly as below: Create a new layer if a different abstraction is needed. Each layer should have a well-defined function. The function of each layer is chosen based on internationally standardized protocols."
+        },
+        {
+            "question": "What are the HTTP and the HTTPS protocol?",
+            "answer": "HTTP is the HyperText Transfer Protocol which defines the set of rules and standards on how the information can be transmitted on the World Wide Web (WWW).  It helps the web browsers and web servers for communication. It is a \u2018stateless protocol\u2019 where each command is independent with respect to the previous command. HTTP is an application layer protocol built upon the TCP. It uses port 80 by default. HTTPS is the HyperText Transfer Protocol Secure or Secure HTTP. It is an advanced and secured version of HTTP. On top of HTTP, SSL/TLS protocol is used to provide security. It enables secure transactions by encrypting the communication and also helps identify network servers securely. It uses port 443 by default"
+        }
+    ],
+    "advanced": [
+        {
+            "question": "Can you explain what LAN is?",
+            "answer": "LAN refers to Local Area Network. It is the network between devices located in a remote physical location. It can be either wired or wireless. LANs differ from each other based on given factors: Protocol - rules for data transfer Media - medium for connecting like twisted pair wires and optic fibers Topology - arrangement of nodes in the network"
+        },
+        {
+            "question": "What is an anonymous FTP?",
+            "answer": "Anonymous FTP allows users to access public data. The user need not identify himself to the server, and the login is anonymous. So, while using anonymous FTP, you are required to add 'anonymous' in place of the user id. Anonymous FTPs effectively distribute large files to many people without giving vast numbers of password and username combinations."
+        },
+        {
+            "question": "Tell us about UTP cable.",
+            "answer": "A UTP cable is made up of copper and has a resistance of 100 ohms. It includes 2-1800 unshielded twisted pairs surrounded by a non-metallic case. These twists provide immunity to EMI and electrical noise."
+        },
+        {
+            "question": "What do you understand by TCP?",
+            "answer": "Transmission Control Protocol or TCP is a connection-oriented protocol that maintains an established connection between communicating devices until both are done exchanging messages. This protocol is used to determine how application data can be delivered over a network using packets. It also receives and sends packets from and to the network layer and is in charge of flow control."
+        },
+        {
+            "question": "What is meant by NOS?",
+            "answer": "NOS or Network Operating System is an operating system designed to support databases, workstations, personal computers, and networks. For example, Linux, MAC OS X, Windows Server 2008. These OS provide functionalities such as multiprocessing support, processor support, web services, authentication, etc."
+        },
+        {
+            "question": "Explain piggybacking.",
+            "answer": "In two-way communication, the receiver sends an acknowledgment to the sender on receiving the data packets. Suppose the receiver does not send the acknowledgment immediately and waits till the network layer passes in the following data packet. In that case, an acknowledgment is attached to the outgoing data frame. This process is known as piggybacking."
+        },
+        {
+            "question": "What do you understand by DHCP?",
+            "answer": "Dynamic Host Configuration Protocol or DHCP is a network management protocol. DHCP automatically assigns IP addresses to the devices on the network and is used on the UDP/IP networks. In turn, it reduces the need for a network admin to assign IP addresses manually; this further reduces errors."
+        },
+        {
+            "question": "What is the best place to install an antivirus program in a network containing twenty workstations and two servers?",
+            "answer": "The best option is to install antivirus on all the computers of the network. This will protect all devices from others in case there is a virus inserted into the server."
+        },
+        {
+            "question": "Tell us about IPv6.",
+            "answer": "IPv6 refers to the Internet Protocol version 6. This is the latest version of the Internet Protocol. Its IP address length is 128 bits which resolve the issue of approaching network addresses shortage."
+        },
+        {
+            "question": "What do you understand by sneakernet?",
+            "answer": "Sneakernet refers to the unofficial term for transferring electronic information by physically moving media like the USB flash, Floppy disk, optical disks, etc"
+        }, {
+            "question": "What is the difference between the ipconfig and the ifconfig?",
+            "answer": "ipconfig: 1.Internet Protocol Configuration, 2.Command used in Microsoft operating systems to view and configure network interfaces.  ifconfig: 1.Interface Configuration, 2. Command used in MAC, Linux, UNIX operating systems to view and configure network interfaces"
+        }
+
+
+    ]
+  }
+  
