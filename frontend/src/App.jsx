@@ -1,6 +1,8 @@
-import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
 import axios from "axios";
+import { auth } from "./firebaseConfig";
 import LoginPage from "./components/auth/LoginPage";
 import "./App.css";
 import HomePage from "./components/home/Home";
@@ -13,6 +15,24 @@ import Numbers from "./components/roadmappages/aptitude/Number";
 import ComputerFundamentalTopics from "./components/roadmappages/computerfundamentals/FundamentalTopics";
 import CnQnAPage from "./components/roadmappages/computerfundamentals/CnTopics";
 
+const ProtectedRoute = ({ element }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  if (loading) return <div className="text-white text-center">Loading...</div>;
+
+  return user ? element : <Navigate to="/" replace />;
+};
+
 function App() {
   const isValidURL = (url) => {
     try {
@@ -21,6 +41,7 @@ function App() {
       return false;
     }
   };
+
   useEffect(() => {
     window.scrollTo(top, 0);
     const prefetchTestLink = async () => {
@@ -67,14 +88,11 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/test" element={<DailyTest />} />
+        <Route path="/test" element={<ProtectedRoute element={<DailyTest />} />} />
         <Route path="/roadmaps" element={<Roadmap />} />
         <Route path="/aptitopics" element={<AptitudeTopics />} />
         <Route path="/number-system" element={<Numbers />} />
-        <Route
-          path="/computer-fundamentals"
-          element={<ComputerFundamentalTopics />}
-        />
+        <Route path="/computer-fundamentals" element={<ComputerFundamentalTopics />} />
         <Route path="/computer-networks" element={<CnQnAPage />} />
       </Routes>
     </BrowserRouter>

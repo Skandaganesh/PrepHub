@@ -9,20 +9,20 @@ const HomePage = () => {
 
   return (
     <div
-      className="relative min-h-screen text-white"
+      className="relative min-h-screen text-white z-10"
       style={{
         backgroundImage:
           'url("https://img.pikbest.com/backgrounds/20220119/blue-purple-gradient-fluid-abstract-minimalistic-background_6241863.jpg!bw700")',
-        backgroundSize: "cover", // Ensures full coverage
-        backgroundRepeat: "no-repeat", // Prevents repetition
-        backgroundAttachment: "fixed", // Fixes the image in place
-        backgroundPosition: "center center", // Centers the image
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center center",
       }}
     >
       <BackgroundAnimation />
 
       {/* Hero Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between px-10 py-20">
+      <div className="flex flex-col md:flex-row items-center justify-between px-10 py-20 relative z-20">
         <div className="md:w-1/2 text-center md:text-left">
           <h1 className="text-4xl font-bold mb-4">Welcome to PrepHub</h1>
           <p className="text-lg mb-6">
@@ -42,7 +42,7 @@ const HomePage = () => {
       </div>
 
       {/* Testimonials Section */}
-      <div className="py-20 bg-gray-900 bg-opacity-80">
+      <div className="py-20 bg-gray-900 bg-opacity-80 relative z-20">
         <h2 className="text-center text-3xl font-bold mb-10">
           What Our Users Say
         </h2>
@@ -67,7 +67,7 @@ const HomePage = () => {
       </div>
 
       {/* About Us Section */}
-      <div className="py-20 text-center max-w-3xl mx-auto">
+      <div className="py-20 text-center max-w-3xl mx-auto relative z-20">
         <h2 className="text-3xl font-bold mb-6">About Us</h2>
         <p className="text-lg">
           PrepHub is a platform dedicated to helping students and professionals
