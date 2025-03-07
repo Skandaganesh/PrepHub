@@ -99,12 +99,12 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <div className="relative z-50">
+        {userName && <div className="relative z-50">
           <button onClick={() => setUserMenuOpen(!userMenuOpen)} className="flex items-center space-x-2">
             <User size={28} className="hover:text-blue-500 transition cursor-pointer" />
           </button>
 
-          { userMenuOpen &&  (
+          { userMenuOpen  &&  (
             <div className="absolute right-0 mt-2 w-48 bg-gray-800 text-white rounded-lg shadow-lg border border-gray-600 p-2">
               {userName && <p className="text-center text-l mb-2">Hi , {userName} </p>}
               <button
@@ -121,7 +121,7 @@ export default function Navbar() {
               </button>
             </div>
           )}
-        </div>
+        </div>}
       </div>
 
       {showPasswordModal && (
