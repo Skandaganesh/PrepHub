@@ -14,6 +14,7 @@ import AptitudeTopics from "./components/roadmappages/aptitude/AptitudeTopics";
 import Numbers from "./components/roadmappages/aptitude/Number";
 import ComputerFundamentalTopics from "./components/roadmappages/computerfundamentals/FundamentalTopics";
 import CnQnAPage from "./components/roadmappages/computerfundamentals/CnTopics";
+import Internship from "./components/home/Internship";
 
 const ProtectedRoute = ({ element }) => {
   const [user, setUser] = useState(null);
@@ -94,6 +95,7 @@ function App() {
         <Route path="/number-system" element={<Numbers />} />
         <Route path="/computer-fundamentals" element={<ComputerFundamentalTopics />} />
         <Route path="/computer-networks" element={<CnQnAPage />} />
+        <Route path="/internship" element={<Internship/>}/>
       </Routes>
     </BrowserRouter>
   );

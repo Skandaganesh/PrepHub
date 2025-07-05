@@ -40,7 +40,7 @@ const Numbers = () => {
       <ul className="list-disc list-inside ml-6 mb-6 text-lg">
         <li><strong>Addition (+)</strong>: 5 + 3 = 8</li>
         <li><strong>Subtraction (-)</strong>: 7 - 2 = 5</li>
-        <li><strong>Multiplication (*)</strong>: 4 × 3 = 12</li>
+        <li><strong>Multiplication (*)</strong>: 4 * 3 = 12</li>
         <li><strong>Division (/)</strong>: 10 ÷ 2 = 5</li>
       </ul>
       
