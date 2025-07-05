@@ -66,8 +66,15 @@ export default function Navbar() {
     
     <nav className="bg-gray-900 text-white p-4 relative">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold cursor-pointer" >  <Link to="/">PrepHub</Link></div>
-
+      <Link to="/home" className="block">
+        <div className="text-3xl font-extrabold tracking-tight hover:scale-110 transition-transform duration-300">
+          <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">Prep</span>
+          <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(236,72,153,0.6)]">
+            Hub
+          </span>
+        </div>
+      
+      </Link>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
