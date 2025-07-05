@@ -15,7 +15,7 @@ import Numbers from "./components/roadmappages/aptitude/Number";
 import ComputerFundamentalTopics from "./components/roadmappages/computerfundamentals/FundamentalTopics";
 import CnQnAPage from "./components/roadmappages/computerfundamentals/CnTopics";
 import Internship from "./components/home/Internship";
-
+import Navbar from "./components/home/Navbar";
 const ProtectedRoute = ({ element }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -31,7 +31,7 @@ const ProtectedRoute = ({ element }) => {
 
   if (loading) return <div className="text-white text-center">Loading...</div>;
 
-  return user ? element : <Navigate to="/" replace />;
+  return user ? element : <Navigate to="/login" replace />;
 };
 
 function App() {
@@ -84,9 +84,11 @@ function App() {
 
   return (
     <BrowserRouter>
+    <Navbar />
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/test" element={<ProtectedRoute element={<DailyTest />} />} />
@@ -95,7 +97,7 @@ function App() {
         <Route path="/number-system" element={<Numbers />} />
         <Route path="/computer-fundamentals" element={<ComputerFundamentalTopics />} />
         <Route path="/computer-networks" element={<CnQnAPage />} />
-        <Route path="/internship" element={<Internship/>}/>
+        <Route path="/internship" element={<ProtectedRoute element={<Internship />} />}/>
       </Routes>
     </BrowserRouter>
   );
