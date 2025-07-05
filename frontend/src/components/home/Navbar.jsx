@@ -92,6 +92,11 @@ export default function Navbar() {
               Daily Tests
             </a>
           </li>
+           <li>
+            <a href="internship" className="block py-2 px-4 hover:text-blue-500 transition">
+              Internship
+            </a>
+          </li>
           <li>
             <a href="contact" className="block py-2 px-4 hover:text-blue-500 transition">
               Contact Us
