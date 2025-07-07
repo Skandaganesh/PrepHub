@@ -11,7 +11,7 @@ const Internship = () => {
   }, []);
 
   const handleShare = (intern) => {
-    const shareUrl = `https://prephub.netlify.app/internship/`;
+    const shareUrl = `https://prephub.netlify.app/internship-list/`;
     const shareText = `${intern.title}${intern.ctc ? ` | CTC: ${intern.ctc}` : ""}`;
  
     if (navigator.share) {
