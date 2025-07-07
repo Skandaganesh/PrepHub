@@ -12,7 +12,8 @@ const Internship = () => {
 
   const handleShare = (intern) => {
     const shareUrl = `https://prephub.netlify.app/internship-list/`;
-    const shareText = `${intern.title}${intern.ctc ? ` | CTC: ${intern.ctc}` : ""}`;
+    const shareText = `${intern.title}\n📍 Location: ${intern.location}\n💰 CTC: ${intern.ctc || "Not specified"}\n`;
+
  
     if (navigator.share) {
       navigator
@@ -52,7 +53,7 @@ const Internship = () => {
             <h2 className="text-2xl font-bold mb-2">{intern.title}</h2>
             <p className="text-sm text-gray-300 mb-1">📍 {intern.location}</p>
             <p className="mb-4">{intern.description}</p>
-            <p className="mb-4">💰 CTC: {intern.ctc || "Not specified"}</p>
+            <p className="mb-4">💰 CTC: {intern.ctc  || "Not specified"} </p>
 
             <a
               href={`${import.meta.env.VITE_API_URL}/${intern.id}`}

@@ -23,19 +23,30 @@ const AddInternshipUpdate = () => {
     setLoading(true);
 
     try {
+      const payload = {
+        ...formData,
+        ctc: formData.ctc ? `${formData.ctc} LPA` : "", // append LPA
+      };
+
       const res = await fetch(
         `${import.meta.env.VITE_API_URL}/api/internships/addinternshipopening`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(payload),
         }
       );
 
       if (!res.ok) throw new Error("Failed to add internship");
 
       setMessage("✅ Internship added successfully!");
-      setFormData({ title: "", description: "", ctc: "", link: "", location: "" });
+      setFormData({
+        title: "",
+        description: "",
+        ctc: "",
+        link: "",
+        location: "",
+      });
     } catch (err) {
       setMessage("❌ Error: " + err.message);
     } finally {
@@ -46,13 +57,40 @@ const AddInternshipUpdate = () => {
   return (
     <div className="min-h-screen bg-black text-white p-6 flex justify-center items-center">
       <div className="w-full max-w-lg bg-gray-900 rounded-xl p-8 shadow-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">Add Internship Opening</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          Add Internship Opening
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <Input label="Title" name="title" value={formData.title} onChange={handleChange} />
-          <Input label="Description" name="description" value={formData.description} onChange={handleChange} />
-          <Input label="CTC (optional)" name="ctc" value={formData.ctc} onChange={handleChange} />
-          <Input label="Application Link" name="link" value={formData.link} onChange={handleChange} />
-          <Input label="Location" name="location" value={formData.location} onChange={handleChange} />
+          <Input
+            label="Title"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+          />
+          <Input
+            label="Description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+          />
+          <Input
+            label="CTC In LPA (optional)"
+            name="ctc"
+            value={formData.ctc}
+            onChange={handleChange}
+          />
+          <Input
+            label="Application Link"
+            name="link"
+            value={formData.link}
+            onChange={handleChange}
+          />
+          <Input
+            label="Location"
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+          />
 
           <button
             type="submit"
