@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { auth, googleProvider, db } from "../../firebaseConfig";
 import {
@@ -22,6 +22,10 @@ const LoginPage = () => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+const from = location.state?.from || "/test";
 
   const handleAuth = async (e) => {
     e.preventDefault();
@@ -49,7 +53,7 @@ const LoginPage = () => {
         userCredential = await signInWithEmailAndPassword(auth, email, password);
       }
   
-      navigate("/test");
+      navigate(from);
     } catch (error) {
       const errorMsg = error.response?.data?.error?.message || error.message;
       alert(`Error: ${errorMsg}`);
@@ -63,6 +67,7 @@ const LoginPage = () => {
   const handleGoogleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
+     
       const userDoc = await getDoc(doc(db, "users", result.user.uid));
 
       if (!userDoc.exists()) {
@@ -73,9 +78,10 @@ const LoginPage = () => {
           college: "",
         });
       }
-alert("Google Login successful!");
+       alert("Google Login successful!");
       setMessage("Google Login successful!");
-      navigate("/test");
+      navigate(from);
+
     } catch (error) {
       setMessage(error.message);
     }

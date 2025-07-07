@@ -16,9 +16,13 @@ import ComputerFundamentalTopics from "./components/roadmappages/computerfundame
 import CnQnAPage from "./components/roadmappages/computerfundamentals/CnTopics";
 import Internship from "./components/home/Internship";
 import Navbar from "./components/home/Navbar";
+import {  useLocation } from "react-router-dom";
+import Addinternshipupdate from "./components/addinternshipupdate";
+
 const ProtectedRoute = ({ element }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -31,8 +35,15 @@ const ProtectedRoute = ({ element }) => {
 
   if (loading) return <div className="text-white text-center">Loading...</div>;
 
-  return user ? element : <Navigate to="/login" replace />;
+  return user ? (
+    element
+  ) : (
+    <Navigate to="/login" replace state={{ from: location.pathname }} />
+  );
 };
+
+
+
 
 function App() {
   const isValidURL = (url) => {
@@ -98,6 +109,7 @@ function App() {
         <Route path="/computer-fundamentals" element={<ComputerFundamentalTopics />} />
         <Route path="/computer-networks" element={<CnQnAPage />} />
         <Route path="/internship" element={<ProtectedRoute element={<Internship />} />}/>
+        <Route path="/addiupdate" element={<ProtectedRoute element={<Addinternshipupdate />} />}/>
       </Routes>
     </BrowserRouter>
   );
