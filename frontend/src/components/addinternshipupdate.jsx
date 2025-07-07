@@ -29,7 +29,7 @@ const AddInternshipUpdate = () => {
       };
 
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/internships/addinternshipopening`,
+        `${import.meta.env.VITE_API_URL}/addinternshipopening`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
