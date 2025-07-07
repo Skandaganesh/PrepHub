@@ -30,7 +30,7 @@ export default function Navbar() {
     };
 
     checkUser();
-    intervalId = setInterval(checkUser, 5000);
+    intervalId = setInterval(checkUser, 2000);
 
     return () => clearInterval(intervalId);
   }, []);
