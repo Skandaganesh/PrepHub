@@ -10,7 +10,7 @@ const Internship = () => {
       .catch((err) => console.error("Error fetching internships:", err));
   }, []);
 
-  const handleShare = (intern) => {
+ /* const handleShare = (intern) => {
     const shareUrl = `https://prephub.dev/internship-list/`;
     const shareText = `${intern.title}\n📍 Location: ${intern.location}\n💰 CTC: ${intern.ctc || "Not specified"}\n`;
     const additional = `Join the Prephub community here \n 
@@ -31,7 +31,32 @@ const Internship = () => {
         .catch(() => alert("❌ Failed to copy link"));
     }
   };
+*/
+  const handleShare = (intern) => {
+  const shareUrl = `https://prephub.dev/internship-list/`;
+  const text = `${intern.title}
+📍 Location: ${intern.location}
+💰 CTC: ${intern.ctc || "Not specified"}
+${shareUrl}
 
+Join the PrepHub community for updates
+https://chat.whatsapp.com/KQ5PwJw8YPU65QYufWwG9K?mode=ac_t`;
+
+  if (navigator.share) {
+    navigator
+      .share({
+        title: intern.title,
+        text
+      })
+      .catch((err) => console.error("Share failed:", err));
+  } else {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => alert("🔗 Link copied to clipboard!"))
+      .catch(() => alert("❌ Failed to copy link"));
+  }
+};
+  
   return (
     <div className="min-h-screen bg-black text-white px-6 py-12">
       <h1 className="text-3xl font-bold mb-10 text-center">Internships</h1>
