@@ -13,15 +13,15 @@ const Internship = () => {
   const handleShare = (intern) => {
     const shareUrl = `https://prephub.dev/internship-list/`;
     const shareText = `${intern.title}\n📍 Location: ${intern.location}\n💰 CTC: ${intern.ctc || "Not specified"}\n`;
-
- 
+    const additional = `Join the Prephub community here \n 
+  https://chat.whatsapp.com/KQ5PwJw8YPU65QYufWwG9K?mode=ac_t`
     if (navigator.share) {
       navigator
         .share({
           title: intern.title,
           text: shareText,
           url: shareUrl,
-          
+          text:additional,
         })
         .catch((err) => console.error("Share failed:", err));
     } else {
