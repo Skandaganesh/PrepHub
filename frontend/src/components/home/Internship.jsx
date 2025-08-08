@@ -14,7 +14,7 @@ const Internship = () => {
     const shareUrl = `https://prephub.dev/internship-list/`;
     const shareText = `${intern.title}\n📍 Location: ${intern.location}\n💰 CTC: ${intern.ctc || "Not specified"}\n`;
     const additional = `Join the Prephub community here \n 
-  https://chat.whatsapp.com/KQ5PwJw8YPU65QYufWwG9K?mode=ac_t`
+  https://chat.whatsapp.com/KQ5PwJw8YPU65QYufWwG9K?mode=ac_t`;
     if (navigator.share) {
       navigator
         .share({
